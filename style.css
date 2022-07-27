@@ -23,7 +23,7 @@ body{
 }
 .header{
   background-color: var(--white);
-  padding: 1rem;
+  padding-inline: 3 rem;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 0px 0px;
   margin-bottom: 5px;
 }
@@ -47,10 +47,10 @@ body{
 ul{
   list-style: none;
 }
-
-.profile-pic{
-  border-radius: 50%;
+li{
+  margin-top: 1.25rem;
 }
+
 .button{
   border: 0;
   background-color: var(--blue);
@@ -65,15 +65,46 @@ ul{
   border: 0;
   background-color: var(--grey);
   height: 2em;
-  padding: 5px;
+  padding: 6px;
   width: 90%;
+  margin-left: 1rem;
+}
+.search > img{
+  width: 30px;
+  align-self: center;
+  justify-self: end;
+}
+.greeting{
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+  margin-left: 25px;
+  margin-top: 10px;
+}
+.name{
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-left: 25px;
+}
+img{
+  width: 7rem;
+  height: auto;
+}
+.user-info > img{
+  width: 75px;
+}
+.user-info > img:first-child{
+  width: 30px;
+}
+.profile-pic{
+  border-radius: 10rem;
 }
 /* Container general grid layout*/
 
 .container{
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1fr 4fr;
+  grid-template-rows: 220px 6fr;
 }
 
 
@@ -82,8 +113,10 @@ ul{
 .header{
   grid-area: 1 / 2 / 2 / 3;
   display: grid;
+  gap: 1rem;
   grid-template-columns: 3fr 2fr;
-  grid-template-rows: 1fr 1.5fr;
+  grid-template-rows: minmax(5rem,30%) minmax(5rem,40%);
+  align-items: center;
 }
 
 .header > .search{
@@ -103,19 +136,54 @@ ul{
 
 .header > .user-info{
   grid-area: 1 / 2 / 2 / 3;
-
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30px, 33.33%)) ;
+  align-items: center;
+  justify-items: center;
+}
+.header > .user-info > img:first-child{
+  justify-self: end;
+}
+.header > .user-info > p{
+  justify-self: start;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  font-weight: 600;
 }
 .header > .user-greeting{
   grid-area: 2 / 1 / 3 / 2;
-
+  display: grid;
+  margin-top: 30px;
+  margin-left: 60px;
+  grid-template-columns: 1fr 6fr;
+  grid-template-rows: minmax(2rem , 25%) minmax(3rem,60%);
 }
+.header > .user-greeting > img{
+  grid-area: 1 / 1 / 3 / 2;
+  align-self: center;
+  justify-self: center;
+}
+.header > .user-greeting > .greeting{
+  grid-area: 1 / 2 / 2 / 3;
+  align-self: end;
+  justify-self: start;
+}
+.header > .user-greeting > .name{
+  grid-area: 2 / 2 / 3 / 3;
+  align-self:end;
+  justify-self:start;
+}
+
 .header > .buttons{
   grid-area: 2 / 2 / 3 / 3;
   display: grid;
-  grid-template-columns: repeat(3,1fr);
-  grid-template-rows: 1fr;
+  grid-template-columns: repeat(auto-fit,minmax(3em,33.33%));;
+  grid-template-rows: 65%;
   align-items: center;
   justify-items: center;
+  margin-top: 30px;
+  margin-right: 30px;
+
 }
 
 /* sidebar grid and subgrid */
@@ -123,17 +191,19 @@ ul{
 .sidebar{
   grid-area: 1 / 1 / 3 / 2;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 4fr 7fr;
-  gap: 2rem;
+  grid-template-columns: 100%;
+  grid-template-rows: 170px 520px 510px
+  
 }
 
 .logo{
   grid-area: 1 / 1 / 2 / 2;
+  align-self: center;
+  justify-self: start;
 }
+
 .navigation{
   grid-area: 2 / 1 / 3 / 2;
-  
 }
 
 .navigation > ul{
@@ -158,4 +228,56 @@ ul{
 
 .main{
   grid-area: 2 / 2 / 3 / 3;
+  display: grid;
+}
+
+/* a lot of list things for icons */
+
+li:hover, button:hover, .logo:hover{
+  color: var(--grey);
+  cursor: pointer;
+}
+
+
+.logo:first-child{
+  background: url(images/view-dashboard.png) no-repeat left; /* <-- change `left` & `top` too for extra control */
+  padding: 5px 0px 0px 5rem ;
+  background-size: 4rem;
+}
+.navigation > ul > li:nth-child(1){
+  background: url(images/home.png) no-repeat left; /* <-- change `left` & `top` too for extra control */
+  
+  padding: 5px 0px 0px 60px ;
+}
+.navigation > ul > li:nth-child(2){
+  background: url(images/card-account-details-outline.png) no-repeat left; /* <-- change `left` & `top` too for extra control */
+  padding: 5px 0px 0px 60px ;
+}
+.navigation > ul > li:nth-child(3){
+  background: url(images/message-reply.png) no-repeat left; /* <-- change `left` & `top` too for extra control */
+  padding: 5px 0px 0px 60px ;
+}
+.navigation > ul > li:nth-child(4){
+  background: url(images/clock-time-three.png) no-repeat left; /* <-- change `left` & `top` too for extra control */
+  padding: 5px 0px 0px 60px ;
+}
+.navigation > ul > li:nth-child(5){
+  background: url(images/note-multiple.png) no-repeat left; /* <-- change `left` & `top` too for extra control */
+  padding: 5px 0px 0px 60px ;
+}
+.navigation > ul > li:nth-child(6){
+  background: url(images/account-group.png) no-repeat left; /* <-- change `left` & `top` too for extra control */
+  padding: 5px 0px 0px 60px ;
+}
+.branding > ul > li:first-child{
+  background: url(images/cog.png) no-repeat left; /* <-- change `left` & `top` too for extra control */
+  padding: 5px 0px 0px 60px ;
+}
+.branding > ul > li:nth-child(2){
+  background: url(images/help-box.png) no-repeat left; /* <-- change `left` & `top` too for extra control */
+  padding: 5px 0px 0px 60px ;
+}
+.branding > ul > li:nth-child(3){
+  background: url(images/shield-check.png) no-repeat left; /* <-- change `left` & `top` too for extra control */
+  padding: 5px 0px 0px 60px ;
 }
