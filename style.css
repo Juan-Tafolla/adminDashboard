@@ -99,6 +99,44 @@ img{
 .profile-pic{
   border-radius: 10rem;
 }
+
+.projects > div{
+  background: linear-gradient(to right,
+  var(--yellow) 2%, var(--white) 2% );
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 1.95px 1.95px 8px;
+}
+.announcements {
+  background-color: var(--white);
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 1.95px 1.95px 8px;
+}
+.trending{
+  background-color: var(--white);
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 1.95px 1.95px 8px;
+}
+.main > p{
+  font-weight: 700;
+  font-size: 1.5rem;
+  height: 0rem;
+}
+
+.text-area{
+  letter-spacing: 0;
+}
+.text-area > .title{
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+.text-area > .text {
+  letter-spacing: 0.2px;
+  font-size: 1.2rem;
+}
+.icons > img{
+  width: 30px;
+  margin-left: 2rem;
+}
 /* Container general grid layout*/
 
 .container{
@@ -229,6 +267,50 @@ img{
 .main{
   grid-area: 2 / 2 / 3 / 3;
   display: grid;
+  grid-template-columns: 3fr 1.2fr;
+  grid-template-rows: 0.1fr 1fr 0.1fr 1fr;
+  gap: 1.2rem;
+  padding-bottom: 5rem;
+  padding-right: 3.5rem;
+}
+
+.title1{
+  grid-area: 1 / 1 / 2 / 2;
+ 
+}
+.projects{
+  grid-area: 2 / 1 / 5 / 2;
+  display: grid;
+  grid-template-columns: 500px 500px ;
+  grid-template-rows: repeat(auto-fit, minmax(1fr ,33%));
+  gap: 2rem;
+}
+.projects > div{
+  display: grid;
+  padding-inline: 2rem;
+  grid-template-rows: 200px 75px;
+  align-items: center;
+}
+.icons{
+  justify-self: end;
+}
+
+.title2{
+  grid-area: 1 / 2 / 2 / 3;
+}
+.announcements{
+  grid-area: 2 / 2 / 3 / 3;
+  display: grid;
+  grid-template-rows: repeat(3,1fr);
+}
+
+.title3{
+  grid-area: 3 / 2 / 4 / 3;
+  
+}
+
+.trending{
+  grid-area: 4 / 2 / 5 / 3;
 }
 
 /* a lot of list things for icons */
